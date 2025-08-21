@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxford Salsa Society</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Dancing Script for titles, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom font styles */
+        .font-display {
+            font-family: 'Dancing Script', cursive;
+        }
+        .font-body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple scroll-behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-body bg-gray-900 text-gray-200">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-display text-3xl text-red-500">Oxford Salsa</a>
+            <ul class="hidden md:flex items-center space-x-8">
+                <li><a href="#about" class="hover:text-red-400 transition-colors duration-300">About Us</a></li>
+                <li><a href="#classes" class="hover:text-red-400 transition-colors duration-300">Classes</a></li>
+                <li><a href="#events" class="hover:text-red-400 transition-colors duration-300">Events</a></li>
+                <li><a href="#join" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full transition-transform duration-300 hover:scale-105">Join Now</a></li>
+            </ul>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                ☰
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#about" class="block py-2 hover:text-red-400">About Us</a>
+            <a href="#classes" class="block py-2 hover:text-red-400">Classes</a>
+            <a href="#events" class="block py-2 hover:text-red-400">Events</a>
+            <a href="#join" class="block mt-2 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full text-center">Join Now</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="h-screen bg-cover bg-center flex items-center justify-center text-white" style="background-image: url('https://placehold.co/1920x1080/1a202c/c53030?text=Salsa+Dancers');">
+            <div class="text-center bg-black/50 p-8 rounded-lg">
+                <h1 class="font-display text-6xl md:text-8xl text-red-500">Feel the Rhythm</h1>
+                <p class="text-xl md:text-2xl mt-4 mb-8 max-w-2xl">Welcome to the Oxford Salsa Society. Discover the passion of Latin dance right here in the heart of Oxford.</p>
+                <a href="#classes" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-transform duration-300 hover:scale-105">Find Your Class</a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-display text-5xl text-red-500 mb-4">About the Society</h2>
+                <p class="max-w-3xl mx-auto text-lg leading-relaxed">
+                    Founded in [Year], the Oxford Salsa Society is a vibrant community of students, staff, and locals who share a love for salsa dancing. From absolute beginners to seasoned pros, we provide a friendly and welcoming atmosphere for everyone to learn, practice, and enjoy the rich culture of Latin dance. Our goal is to build confidence, create friendships, and most importantly, have fun on the dance floor!
+                </p>
+            </div>
+        </section>
+
+        <!-- Classes Section -->
+        <section id="classes" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="font-display text-5xl text-center text-red-500 mb-12">Our Classes</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Class Card 1: Beginner -->
+                    <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/333/fff?text=Beginners" alt="Beginner Salsa Class" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Beginner Salsa</h3>
+                            <p class="text-gray-400 mb-4">No partner or experience needed! Learn the fundamental steps, timing, and basic partner work in a fun, pressure-free environment.</p>
+                            <div class="font-semibold">Tuesdays, 7:00 PM - 8:00 PM</div>
+                        </div>
+                    </div>
+                    <!-- Class Card 2: Improver -->
+                    <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/444/fff?text=Improvers" alt="Improver Salsa Class" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Improver / Intermediate</h3>
+                            <p class="text-gray-400 mb-4">Ready for more? Build on your basics with more complex turn patterns, better lead/follow technique, and stylish footwork.</p>
+                            <div class="font-semibold">Tuesdays, 8:00 PM - 9:00 PM</div>
+                        </div>
+                    </div>
+                    <!-- Class Card 3: Advanced -->
+                    <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <img src="https://placehold.co/600x400/555/fff?text=Advanced" alt="Advanced Salsa Class" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">Advanced Technique</h3>
+                            <p class="text-gray-400 mb-4">For experienced dancers. Dive into advanced concepts, musicality, and performance-level patterns to challenge yourself.</p>
+                            <div class="font-semibold">Thursdays, 8:00 PM - 9:00 PM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-display text-5xl text-red-500 mb-4">Upcoming Events</h2>
+                <p class="max-w-3xl mx-auto text-lg mb-10">Join us for our regular socials, workshops, and special parties!</p>
+                <div class="bg-gray-900 rounded-lg p-8 max-w-2xl mx-auto shadow-lg">
+                    <h3 class="text-3xl font-bold text-red-400">Monthly Salsa Social</h3>
+                    <p class="text-xl my-2">Saturday, 27th September</p>
+                    <p class="text-gray-400">Join us at [Venue Name] for a night of non-stop dancing. All levels welcome. Music from our resident DJ, cheap drinks, and a fantastic atmosphere guaranteed!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Us Section -->
+        <section id="join" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-display text-5xl text-red-500 mb-4">Get Involved!</h2>
+                <p class="max-w-3xl mx-auto text-lg mb-8">
+                    Ready to join the fun? Sign up for our mailing list to get the latest updates on classes, socials, and special offers. Or just drop by one of our classes!
+                </p>
+                <form class="max-w-md mx-auto">
+                    <div class="flex gap-4">
+                        <input type="email" placeholder="Enter your email" class="w-full bg-gray-700 text-white px-4 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500">
+                        <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition-transform duration-300 hover:scale-105">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-700 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 Oxford Salsa Society. All Rights Reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <!-- Replace # with your actual social media links -->
+                <a href="#" class="hover:text-white">Facebook</a>
+                <a href="#" class="hover:text-white">Instagram</a>
+                <a href="#" class="hover:text-white">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
