@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Committee - Oxford Salsa Society</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Dancing Script for titles, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom font styles */
+        .font-display {
+            font-family: 'Dancing Script', cursive;
+        }
+        .font-body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="font-body bg-gray-900 text-gray-200">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-display text-3xl text-red-500">Oxford Salsa</a>
+            <ul class="hidden md:flex items-center space-x-8">
+                <li><a href="index.html#about" class="hover:text-red-400 transition-colors duration-300">About Us</a></li>
+                <li><a href="index.html#classes" class="hover:text-red-400 transition-colors duration-300">Classes</a></li>
+                <li><a href="prices.html" class="hover:text-red-400 transition-colors duration-300">Prices</a></li>
+                <li><a href="committee.html" class="hover:text-red-400 transition-colors duration-300">Committee</a></li>
+            </ul>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                ☰
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="index.html#about" class="block py-2 hover:text-red-400">About Us</a>
+            <a href="index.html#classes" class="block py-2 hover:text-red-400">Classes</a>
+            <a href="prices.html" class="block py-2 hover:text-red-400">Prices</a>
+            <a href="committee.html" class="block py-2 hover:text-red-400">Committee</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-20">
+        <div class="container mx-auto px-6">
+            <h1 class="font-display text-5xl text-center text-red-500 mb-4">Meet the Committee</h1>
+            <p class="text-center text-lg text-gray-400 mb-12 max-w-2xl mx-auto">Our society is run by a team of dedicated volunteers. Feel free to say hello and ask us any questions at our classes and events!</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Committee Member Card - Repeat this block for each member -->
+                <div class="bg-gray-800 rounded-lg shadow-lg text-center p-8">
+                    <img src="https://placehold.co/200x200/ef4444/ffffff?text=Photo" alt="Committee Member" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-700">
+                    <h3 class="text-2xl font-bold">Jane Doe</h3>
+                    <p class="text-red-400 font-semibold">President</p>
+                    <a href="mailto:president@oxfordsalsa.com" class="text-gray-400 hover:text-red-400 text-sm mt-2 inline-block">president@oxfordsalsa.com</a>
+                </div>
+                <!-- End of Member Card -->
+
+                <div class="bg-gray-800 rounded-lg shadow-lg text-center p-8">
+                    <img src="https://placehold.co/200x200/3b82f6/ffffff?text=Photo" alt="Committee Member" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-700">
+                    <h3 class="text-2xl font-bold">John Smith</h3>
+                    <p class="text-blue-400 font-semibold">Treasurer</p>
+                    <a href="mailto:treasurer@oxfordsalsa.com" class="text-gray-400 hover:text-blue-400 text-sm mt-2 inline-block">treasurer@oxfordsalsa.com</a>
+                </div>
+
+                <div class="bg-gray-800 rounded-lg shadow-lg text-center p-8">
+                    <img src="https://placehold.co/200x200/ef4444/ffffff?text=Photo" alt="Committee Member" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-700">
+                    <h3 class="text-2xl font-bold">Alex Ray</h3>
+                    <p class="text-red-400 font-semibold">Secretary</p>
+                    <a href="mailto:secretary@oxfordsalsa.com" class="text-gray-400 hover:text-red-400 text-sm mt-2 inline-block">secretary@oxfordsalsa.com</a>
+                </div>
+                 <div class="bg-gray-800 rounded-lg shadow-lg text-center p-8">
+                    <img src="https://placehold.co/200x200/3b82f6/ffffff?text=Photo" alt="Committee Member" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-700">
+                    <h3 class="text-2xl font-bold">Emily White</h3>
+                    <p class="text-blue-400 font-semibold">Events Officer</p>
+                    <a href="mailto:events@oxfordsalsa.com" class="text-gray-400 hover:text-blue-400 text-sm mt-2 inline-block">events@oxfordsalsa.com</a>
+                </div>
+                 <div class="bg-gray-800 rounded-lg shadow-lg text-center p-8">
+                    <img src="https://placehold.co/200x200/ef4444/ffffff?text=Photo" alt="Committee Member" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-700">
+                    <h3 class="text-2xl font-bold">Chris Green</h3>
+                    <p class="text-red-400 font-semibold">Marketing Officer</p>
+                    <a href="mailto:marketing@oxfordsalsa.com" class="text-gray-400 hover:text-red-400 text-sm mt-2 inline-block">marketing@oxfordsalsa.com</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-700 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 Oxford Salsa Society. All Rights Reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="https://www.instagram.com/oxfordsalsasociety" target="_blank" class="hover:text-white">Instagram: @oxfordsalsasociety</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
