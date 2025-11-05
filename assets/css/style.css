@@ -1,0 +1,19 @@
+:root {
+    --theme-color: #d16441;
+}
+
+.text-theme {
+    color: var(--theme-color);
+}
+
+.bg-theme {
+    background-color: var(--theme-color);
+}
+
+.hover\:text-theme:hover {
+    color: var(--theme-color);
+}
+
+.hover\:bg-theme-dark:hover {
+    background-color: #b85939; /* A slightly darker shade for hover */
+}
