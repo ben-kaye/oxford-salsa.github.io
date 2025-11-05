@@ -16,5 +16,6 @@
 }
 
 .hover\:bg-theme-dark:hover {
-    background-color: #b85939; /* A slightly darker shade for hover */
+    background-color: #b85939;
+    /* A slightly darker shade for hover */
 }
