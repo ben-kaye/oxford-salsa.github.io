@@ -25,14 +25,14 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      inkscape:zoom="3.1286756"
-     inkscape:cx="50.500601"
-     inkscape:cy="14.383083"
-     inkscape:window-width="1920"
-     inkscape:window-height="1027"
+     inkscape:cx="37.076391"
+     inkscape:cy="39.953008"
+     inkscape:window-width="1728"
+     inkscape:window-height="1051"
      inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:window-y="38"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g23" />
+     inkscape:current-layer="layer1" />
   <defs
      id="defs1">
     <linearGradient
@@ -103,6 +103,14 @@
        x2="85.183647"
        y2="50.347195" />
   </defs>
+  <ellipse
+     style="fill:#f5edd8;stroke-width:2.11351;stroke-linecap:square"
+     id="path1"
+     cx="56.766212"
+     cy="59.408241"
+     rx="45.163887"
+     ry="46.958645"
+     transform="matrix(0.26458333,0,0,0.26458333,-1.7902266,-2.4892634)" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
@@ -110,7 +118,7 @@
     <g
        id="g23"
        style="fill:url(#linearGradient23)"
-       transform="matrix(0.26458333,0,0,0.26458333,-1.7902266,-2.4892634)">
+       transform="matrix(0.26458333,0,0,0.26458333,-3.3818075,-1.5202529)">
       <g
          id="g4"
          style="fill:url(#linearGradient5)"
