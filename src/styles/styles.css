@@ -428,7 +428,7 @@ body::before {
   border-radius: 0;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.18s, color 0.18s, transform 0.18s;
+  transition: background 0.18s, color 0.18s, transform 0.18s, box-shadow 0.18s;
 }
 .btn:hover { background: var(--oxblood); transform: translateY(-1px); }
 
@@ -440,10 +440,12 @@ body::before {
 .btn-ghost:hover { background: var(--ink); color: var(--paper); }
 
 .btn-ember {
-  background: var(--terracotta);
-  color: var(--paper);
+  background: #ff8a1a;
+  color: #fff;
 }
-.btn-ember:hover { background: var(--oxblood); }
+.btn-ember:hover {
+  background: #e8731a;
+}
 
 /* ============================================================
    HERO
@@ -567,6 +569,10 @@ body::before {
 }
 @media (min-width: 900px) {
   .hero-aside p { font-size: 18px; margin-bottom: 32px; }
+}
+
+.hero-aside .ticker-label {
+  margin-bottom: 10px;
 }
 
 .hero-aside .ticker {

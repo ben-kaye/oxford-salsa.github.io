@@ -109,7 +109,7 @@ export default function Schedule() {
           <div className="num">02 — Term card</div>
         </div>
         <div>
-          <h2>The <em>term</em> at a glance.</h2>
+          <h2>The term at a glance.</h2>
           <p className="lede" style={{ marginTop: 24 }}>
             {TERM.name} · {weeks.length} of {TERM.weeks} weeks remaining
             {hiddenPast > 0 && !termEnded ? ` (${hiddenPast} past ${hiddenPast === 1 ? 'week' : 'weeks'} hidden)` : ''}.

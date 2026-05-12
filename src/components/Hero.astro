@@ -1,6 +1,6 @@
 ---
 import Marquee from './Marquee.astro';
-import { TERM, SOCIALS } from '../data.js';
+import { TERM, SOCIALS, TERM_CARD } from '../data.js';
 
 // Compute current term week (build-time). Rebuilds on git push.
 const today = new Date();
@@ -21,12 +21,46 @@ if (today < termStart) {
 
 // Next upcoming social — only show if a real, non-closed entry exists.
 const nextSocial = (SOCIALS ?? []).find((s) => !s.closed) ?? null;
+
+// Next 3 upcoming class events (build-time). Walks days forward until 3 events
+// are found or the term ends. Same-day events count as upcoming until midnight.
+function addDaysLocal(d, n) { const x = new Date(d); x.setDate(x.getDate() + n); return x; }
+function startTimeMinutes(ev) {
+  const t = ev.classes?.[0]?.time ?? '';
+  const m = t.match(/(\d{1,2}):(\d{2})/);
+  return m ? parseInt(m[1], 10) * 60 + parseInt(m[2], 10) : 0;
+}
+function shortVenue(v) {
+  return (v || '').replace(/\s+(Church|Hall|Centre|Center|Society)$/i, '').trim();
+}
+const upcomingFromDate = today < termStart ? termStart : today;
+const scanDays = Math.max(0, TERM.weeks * 7 + 7);
+const upcoming = [];
+for (let i = 0; i < scanDays && upcoming.length < 3; i++) {
+  const d = addDaysLocal(upcomingFromDate, i);
+  const weekIdx = Math.floor((d.getTime() - termStart.getTime()) / (7 * dayMs));
+  const weekNum = weekIdx + 1;
+  if (weekNum < 1 || weekNum > TERM.weeks) continue;
+  const dow = d.getDay();
+  const matches = TERM_CARD
+    .filter((ev) => ev.dayOfWeek === dow && (!Array.isArray(ev.weeks) || ev.weeks.includes(weekNum)))
+    .sort((a, b) => startTimeMinutes(a) - startTimeMinutes(b));
+  for (const ev of matches) {
+    upcoming.push({
+      key: `${d.toISOString().slice(0, 10)}-${ev.id}`,
+      label: d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' }),
+      title: ev.title,
+      venue: shortVenue(ev.venue),
+    });
+    if (upcoming.length >= 3) break;
+  }
+}
 ---
 <section class="hero shell">
   <div class="hero-grid-asymmetric">
     <div>
       <div class="eyebrow" style="margin-bottom: 28px;">— {TERM.name}</div>
-      <h1 class="display">Come dance!</h1>
+      <h1 class="display" style="color: var(--oxblood);">Come dance!</h1>
       <div class="hero-meta">
         <div class="item">
           <div class="label">{TERM.name}</div>
@@ -58,12 +92,20 @@ const nextSocial = (SOCIALS ?? []).find((s) => !s.closed) ?? null;
         Oxford's salsa &amp; bachata society. Salsa on Mondays, bachata on Thursdays —
         beginners welcome, no partner required.
       </p>
-      <div class="ticker">
-        <div class="row"><span>Mon · 18:50</span><span class="style">LA Salsa · Beginner</span><span>St Matthew's</span></div>
-        <div class="row"><span>Mon · 20:00</span><span class="style">LA Salsa · Improver</span><span>St Matthew's</span></div>
-        <div class="row"><span>Thu · 19:00</span><span class="style">Bachata · Beginner</span><span>St Columba's</span></div>
-        <div class="row"><span>Thu · 20:00</span><span class="style">Bachata · Improver</span><span>St Columba's</span></div>
-      </div>
+      {upcoming.length > 0 && (
+        <>
+          <div class="eyebrow ticker-label">— Upcoming</div>
+          <div class="ticker">
+            {upcoming.map((u) => (
+              <div class="row">
+                <span>{u.label}</span>
+                <span class="style">{u.title}</span>
+                <span>{u.venue}</span>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   </div>
   <Marquee />
