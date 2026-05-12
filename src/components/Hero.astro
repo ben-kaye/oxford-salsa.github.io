@@ -44,7 +44,15 @@ const nextSocial = (SOCIALS ?? []).find((s) => !s.closed) ?? null;
     </div>
     <div class="hero-aside">
       <figure class="hero-photo">
-        <img src="/assets/images/bg_class.jpg" alt="Oxford Salsa Society members on a class night" loading="eager" />
+        <img
+          src="/assets/images/bg_class.jpg"
+          alt="Oxford Salsa Society members on a class night"
+          width="1000"
+          height="750"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
       </figure>
       <p>
         Oxford's salsa &amp; bachata society. Salsa on Mondays, bachata on Thursdays —
