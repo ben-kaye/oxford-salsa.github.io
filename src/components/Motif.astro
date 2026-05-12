@@ -1,0 +1,66 @@
+---
+interface Props {
+  kind: 'star' | 'dots' | 'swirl' | 'burst' | 'wavy';
+  class?: string;
+  style?: string;
+}
+const { kind, class: cls = '', style = '' } = Astro.props;
+const wrap = `motif motif-${kind} ${cls}`.trim();
+
+// Smooth Archimedean spiral, sampled densely so it draws as one organic curve.
+function spiralPath({ cx = 50, cy = 50, a = 0.8, turns = 2.6, rMax = 44, density = 80 } = {}) {
+  const steps = Math.round(density * turns);
+  const totalAngle = turns * Math.PI * 2;
+  const b = (rMax - a) / totalAngle;
+  let d = '';
+  for (let i = 0; i <= steps; i++) {
+    const t = (i / steps) * totalAngle;
+    const r = a + b * t;
+    const x = (cx + r * Math.cos(t)).toFixed(2);
+    const y = (cy + r * Math.sin(t)).toFixed(2);
+    d += i === 0 ? `M${x} ${y}` : ` L${x} ${y}`;
+  }
+  return d;
+}
+
+const swirlD = kind === 'swirl' ? spiralPath() : '';
+---
+<div class={wrap} style={style} aria-hidden="true">
+  {kind === 'star' && (
+    <svg viewBox="0 0 100 100" fill="currentColor">
+      <path d="M50 2 L58 38 L96 42 L66 64 L78 98 L50 76 L22 98 L34 64 L4 42 L42 38 Z" />
+    </svg>
+  )}
+  {kind === 'dots' && (
+    <svg viewBox="0 0 120 120" fill="currentColor">
+      {Array.from({ length: 7 }).flatMap((_, r) =>
+        Array.from({ length: 7 }).map((_, c) => (
+          <circle cx={10 + c * 16.5} cy={10 + r * 16.5} r={3.2} />
+        ))
+      )}
+    </svg>
+  )}
+  {kind === 'swirl' && (
+    <svg viewBox="-8 -8 116 116" fill="none" stroke="currentColor" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d={swirlD} />
+    </svg>
+  )}
+  {kind === 'burst' && (
+    <svg viewBox="0 0 100 100" fill="currentColor">
+      {Array.from({ length: 16 }).map((_, i) => {
+        const a = (i / 16) * Math.PI * 2;
+        const x1 = 50 + Math.cos(a) * 12;
+        const y1 = 50 + Math.sin(a) * 12;
+        const x2 = 50 + Math.cos(a) * 48;
+        const y2 = 50 + Math.sin(a) * 48;
+        return <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="currentColor" stroke-width="3" stroke-linecap="round" />;
+      })}
+      <circle cx="50" cy="50" r="8" />
+    </svg>
+  )}
+  {kind === 'wavy' && (
+    <svg viewBox="0 0 200 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" preserveAspectRatio="none">
+      <path d="M2 20 Q 14 4 26 20 T 50 20 T 74 20 T 98 20 T 122 20 T 146 20 T 170 20 T 194 20" />
+    </svg>
+  )}
+</div>

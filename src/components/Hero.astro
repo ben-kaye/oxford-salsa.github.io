@@ -1,5 +1,6 @@
 ---
 import Marquee from './Marquee.astro';
+import Motif from './Motif.astro';
 import { TERM, SOCIALS, TERM_CARD } from '../data.js';
 
 // Compute current term week (build-time). Rebuilds on git push.
@@ -57,10 +58,14 @@ for (let i = 0; i < scanDays && upcoming.length < 3; i++) {
 }
 ---
 <section class="hero shell">
+  <Motif kind="swirl" style="top: 8%; right: -100px; width: 200px; height: 200px; opacity: 0.55; transform: rotate(8deg);" />
+  <Motif kind="burst" style="top: 64%; left: 38%; width: 84px; height: 84px; opacity: 0.45;" />
+  <Motif kind="star"  style="top: 6%; left: -22px; width: 64px; height: 64px; opacity: 0.65; transform: rotate(-12deg);" />
+  <Motif kind="wavy"  style="bottom: 26px; left: 36%; width: 200px; height: 32px; opacity: 0.5;" />
   <div class="hero-grid-asymmetric">
     <div>
       <div class="eyebrow" style="margin-bottom: 28px;">— {TERM.name}</div>
-      <h1 class="display" style="color: var(--oxblood);">Come dance!</h1>
+      <h1 class="display" style="color: var(--ink);">Come dance!</h1>
       <div class="hero-meta">
         <div class="item">
           <div class="label">{TERM.name}</div>

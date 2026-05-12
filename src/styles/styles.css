@@ -11,14 +11,17 @@
    ============================================================ */
 
 :root {
-  --ink: #1a0d0a;
-  --ink-soft: #2b1814;
-  --paper: #f4ead5;
-  --paper-warm: #ecd9b9;
-  --oxblood: #5b1418;
-  --terracotta: #c2531c;
-  --ember: #e08035;
-  --rule: rgba(26, 13, 10, 0.18);
+  /* Palette — Riso Pop
+     Printed-poster cyan + hot pink against warm cream.
+     Built around the brighter #f55732 terracotta. */
+  --ink: #1c1a26;            /* near-black with a violet undertone */
+  --ink-soft: #2d2940;       /* softer ink for body copy */
+  --paper: #f7efe0;          /* warm risograph cream */
+  --paper-warm: #f3e2c4;     /* darker cream for fills */
+  --oxblood: #e63e7a;        /* hot poster pink (replaces oxblood role) */
+  --terracotta: #f55732;     /* the punchy orange */
+  --ember: #1e9bd1;          /* riso cyan accent */
+  --rule: rgba(28, 26, 38, 0.18);
 
   --display: "Bodoni Moda", "Playfair Display", Georgia, serif;
   --body: "DM Sans", system-ui, sans-serif;
@@ -92,10 +95,15 @@ h1, h2, h3, h4, h5, h6, p, li, dd, dt, a, span, button, label, figcaption {
   min-width: 0;
 }
 
-/* Sections that host absolutely-positioned decorative `.big-num` need
-   to clip horizontally so a -40px offset doesn't widen the document.
-   `overflow-x: clip` preserves vertical flow and sticky descendants. */
-.section, .hero, .cta-band, .footer { overflow-x: clip; }
+/* Sections that host absolutely-positioned decorative `.big-num` and
+   poster motifs need to clip so offsets don't widen the document, but
+   we want motifs to bleed visibly past edges — `overflow-clip-margin`
+   extends the clip box outward without enabling scroll. */
+.section, .hero, .cta-band {
+  overflow: clip;
+  overflow-clip-margin: 140px;
+}
+.footer { overflow-x: clip; }
 
 /* Composability guard: keep `.shell`'s horizontal gutter intact when
    another class on the same element (.section / .hero / .footer) also
@@ -455,9 +463,11 @@ body::before {
   position: relative;
   padding-top: 48px;
   padding-bottom: 64px;
-  overflow: hidden;
+  isolation: isolate;
 }
 @media (min-width: 900px) { .hero { padding-top: 80px; padding-bottom: 120px; } }
+
+.hero > * { position: relative; z-index: 1; }
 
 .hero-grid-asymmetric {
   display: grid;
@@ -481,6 +491,27 @@ body::before {
   line-height: 0.95;
   letter-spacing: -0.03em;
   color: var(--ink);
+  position: relative;
+  isolation: isolate;
+  display: inline-block;
+}
+.hero h1::before {
+  /* // diagonal slashes — hot pink — rounded square stamp anchored to the title's center, offset */
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  width: 1.6em;
+  height: 1.6em;
+  transform: translate(-50%, -50%) translate(0.6em, 0.5em);
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--oxblood) 0 0.14em,
+    transparent 0.14em 0.6em
+  );
+  border-radius: 0.18em;
 }
 
 .hero h1 .ampersand {
@@ -539,12 +570,35 @@ body::before {
 }
 @media (min-width: 900px) { .hero-aside { padding-bottom: 16px; } }
 
+.hero-aside::before {
+  /* dot matrix — terracotta — backdrop peeking off the photo's top-right corner */
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  top: -36px;
+  right: -56px;
+  width: 168px;
+  height: 168px;
+  background-image: radial-gradient(circle, var(--terracotta) 1.8px, transparent 2.4px);
+  background-size: 14px 14px;
+}
+@media (min-width: 900px) {
+  .hero-aside::before {
+    top: -56px;
+    right: -90px;
+    width: 240px;
+    height: 240px;
+    background-size: 16px 16px;
+  }
+}
+
 .hero-photo {
   margin: 0 0 20px;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--rule);
-  box-shadow: 0 24px 48px -28px rgba(26, 13, 10, 0.45);
+  box-shadow: 0 24px 48px -28px rgba(28, 26, 38, 0.45);
   background: var(--rule);
 }
 @media (min-width: 900px) { .hero-photo { margin: 0 0 28px; border-radius: 18px; } }
@@ -589,14 +643,13 @@ body::before {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2px;
-  padding: 8px 0;
-  border-bottom: 1px dashed var(--rule);
+  padding: 2px 0;
 }
 @media (min-width: 600px) {
   .hero-aside .ticker .row {
     grid-template-columns: 80px 1fr auto;
     gap: 12px;
-    padding: 6px 0;
+    padding: 2px 0;
   }
 }
 .hero-aside .ticker .row .style {
@@ -781,9 +834,9 @@ body::before {
   transition: transform 0.15s, box-shadow 0.15s;
 }
 .class-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px) rotate(-0.4deg);
   z-index: 5;
-  box-shadow: 0 8px 24px rgba(26, 13, 10, 0.18);
+  box-shadow: 0 8px 24px rgba(28, 26, 38, 0.18);
 }
 .class-card.style-salsa { border-left-color: var(--oxblood); background: color-mix(in oklab, var(--oxblood) 12%, var(--paper)); }
 .class-card.style-bachata { border-left-color: var(--terracotta); background: color-mix(in oklab, var(--terracotta) 14%, var(--paper)); }
@@ -1150,7 +1203,7 @@ body::before {
 }
 .tm-event:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px -12px rgba(26, 13, 10, 0.5);
+  box-shadow: 0 8px 18px -12px rgba(28, 26, 38, 0.5);
 }
 .tm-event:focus-visible {
   outline: 2px solid var(--terracotta);
@@ -1265,7 +1318,7 @@ body::before {
   background: var(--rule);
   overflow: hidden;
   border-radius: 6px;
-  box-shadow: 0 28px 56px -32px rgba(26, 13, 10, 0.5);
+  box-shadow: 0 28px 56px -32px rgba(28, 26, 38, 0.5);
 }
 @media (min-width: 900px) { .perform-photo { margin: 0 auto 40px; } }
 
@@ -1447,11 +1500,12 @@ body::before {
 .price-card .price {
   font-family: var(--display);
   font-style: italic;
-  font-size: 52px;
+  font-weight: 700;
+  font-size: 68px;
   line-height: 0.9;
   color: var(--oxblood);
 }
-@media (min-width: 900px) { .price-card .price { font-size: 64px; } }
+@media (min-width: 900px) { .price-card .price { font-size: 88px; } }
 
 .price-card .price sup {
   font-family: var(--mono);
@@ -1627,7 +1681,7 @@ body::before {
   overflow: hidden;
 }
 a.social-card { text-decoration: none; color: inherit; transition: transform 0.15s ease, box-shadow 0.15s ease; }
-a.social-card:hover { transform: translateY(-2px); box-shadow: 0 14px 32px -18px rgba(26, 13, 10, 0.5); }
+a.social-card:hover { transform: translateY(-3px) rotate(0.4deg); box-shadow: 0 14px 32px -18px rgba(28, 26, 38, 0.5); }
 .social-card .poster.is-closed { filter: grayscale(0.35) opacity(0.78); }
 .social-card .closed-stamp {
   position: absolute;
@@ -1641,7 +1695,7 @@ a.social-card:hover { transform: translateY(-2px); box-shadow: 0 14px 32px -18px
   letter-spacing: 0.22em;
   text-transform: uppercase;
   padding: 6px 36px;
-  box-shadow: 0 4px 14px -6px rgba(26, 13, 10, 0.6);
+  box-shadow: 0 4px 14px -6px rgba(28, 26, 38, 0.6);
 }
 .social-card .price-closed {
   color: var(--terracotta);
@@ -1870,3 +1924,28 @@ a.social-card:hover { transform: translateY(-2px); box-shadow: 0 14px 32px -18px
   user-select: none;
 }
 @media (min-width: 900px) { .big-num { display: block; } }
+
+/* ============================================================
+   Cuban poster motifs — float behind content, never block clicks
+   ============================================================ */
+.motif {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.9;
+}
+.motif svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.motif-star  { color: var(--oxblood); }
+.motif-dots  { color: var(--terracotta); }
+.motif-swirl { color: var(--ember); }
+.motif-burst { color: var(--ember); }
+.motif-wavy  { color: var(--ember); }
+
+/* Motifs sit behind .hero / .section content (which is z-index 1 from .hero > *). */
+.hero > .motif,
+.section > .motif,
+.cta-band > .motif { z-index: 0; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .motif { transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1); }
+}
