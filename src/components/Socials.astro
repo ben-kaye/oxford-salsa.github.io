@@ -1,0 +1,39 @@
+---
+import { SOCIALS } from '../data.js';
+import Pattern from './Pattern.astro';
+---
+<section id="socials" class="section shell">
+  <div class="section-head">
+    <div><div class="num">06 — Society Nights</div></div>
+    <div>
+      <h2>The <em>after</em> hours.</h2>
+      <p class="lede" style="margin-top: 24px;">
+        The big night of the year — and anything else we run beyond the weekly classes.
+      </p>
+    </div>
+  </div>
+  <div class="socials-grid">
+    {SOCIALS.map((s) => {
+      const priceText = s.closed ? "See you next year ✨" : s.price;
+      const inner = (
+        <>
+          <div class={`poster ${s.closed ? 'is-closed' : ''}`}>
+            <Pattern kind={s.pattern as 'diagonal' | 'dots' | 'stripes'} hue={s.hue} dark={s.dark} />
+            <div class="when">{s.when}</div>
+            <div class="title">{s.title}</div>
+            {s.closed && <div class="closed-stamp">Wrapped</div>}
+          </div>
+          <div class="meta">
+            <span>{s.sub}</span>
+            <span class={`price ${s.closed ? 'price-closed' : ''}`}>{priceText}</span>
+          </div>
+        </>
+      );
+      return s.url && !s.closed ? (
+        <a class="social-card" href={s.url} target="_blank" rel="noopener">{inner}</a>
+      ) : (
+        <article class="social-card">{inner}</article>
+      );
+    })}
+  </div>
+</section>

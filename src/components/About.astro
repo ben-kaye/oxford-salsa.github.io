@@ -1,0 +1,50 @@
+---
+import { COMMITTEE } from '../data.js';
+
+const initials = (name: string) =>
+  name.split(' ').map((p) => p[0]).slice(0, 2).join('');
+---
+<section id="about" class="section shell" style="position: relative; overflow: hidden;">
+  <div class="big-num" style="right: -40px; top: 60px;">'08</div>
+  <div class="section-head">
+    <div><div class="num">04 — The Society</div></div>
+    <div>
+      <h2>The <em>Oxford Salsa Society</em>, since 2008.</h2>
+    </div>
+  </div>
+  <div class="about-grid">
+    <div class="about-copy">
+      <p>
+        A vibrant community of students, staff and locals who share a love for Latin dance.
+        From absolute beginners to seasoned pros, we offer a friendly atmosphere to learn,
+        practise and enjoy — building confidence, friendships and good rhythm along the way.
+      </p>
+      <p class="secondary">
+        We're a registered student society, run by students for students. Committee elections
+        every May, open to all members — everyone starts on the basic, and everyone has been
+        the new person.
+      </p>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom: 18px;">— 2025 / 26 Committee</div>
+      <div class="committee">
+        {COMMITTEE.map((m) => {
+          const bg = `oklch(0.55 0.16 ${m.hue})`;
+          const fg = `oklch(0.96 0.04 ${m.hue})`;
+          return (
+            <div class="member">
+              {m.photo ? (
+                <img class="avatar avatar-photo" src={m.photo} alt={m.name} loading="lazy" />
+              ) : (
+                <div class="avatar" style={`background: ${bg}; color: ${fg};`}>{initials(m.name)}</div>
+              )}
+              <div class="name">{m.name}</div>
+              <div class="role">{m.role}</div>
+              <div class="since">{m.since}</div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>

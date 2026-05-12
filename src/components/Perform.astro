@@ -1,0 +1,37 @@
+---
+import { PERFORM } from '../data.js';
+---
+<section id="perform" class="section shell" style="position: relative; overflow: hidden;">
+  <div class="big-num" style="left: -32px; top: 60px;">06</div>
+  <div class="section-head">
+    <div><div class="num">05 — Perform · {PERFORM.year}</div></div>
+    <div>
+      <h2>Take it to the <em>stage.</em></h2>
+      <p class="lede" style="margin-top: 24px;">{PERFORM.intro}</p>
+    </div>
+  </div>
+  <figure class="perform-photo">
+    <img src="/assets/images/perform-team.jpg" alt="Bachata and Intermediate Salsa teams holding silver medals from DCL 2026" loading="lazy" />
+    <figcaption>Bachata and Int. Salsa take Silver at DCL 2026</figcaption>
+  </figure>
+  <div class="perform-grid">
+    {PERFORM.teams.map((t) => {
+      const styleLabel = t.style === 'salsa' ? 'LA Salsa' : t.style === 'bachata' ? 'Bachata' : t.style === 'heels' ? 'Heels' : t.style;
+      const isPlural = t.captains.includes('&') || t.captains.toLowerCase().includes(' and ');
+      return (
+        <article class={`team-card style-${t.style}`}>
+          <div class="team-style">{styleLabel}</div>
+          <h3 class="team-name">{t.name}</h3>
+          <div class="team-cap">
+            <span class="lbl">Captain{isPlural ? 's' : ''}</span>
+            <span class="val">{t.captains}</span>
+          </div>
+        </article>
+      );
+    })}
+  </div>
+  <div class="perform-foot">
+    <span class="mono">{PERFORM.audition}</span>
+    <a href="https://www.instagram.com/oxfordsalsasociety" target="_blank" rel="noopener" class="btn btn-ghost">DM us for next year →</a>
+  </div>
+</section>

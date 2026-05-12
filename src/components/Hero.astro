@@ -1,0 +1,85 @@
+---
+import Marquee from './Marquee.astro';
+import { TERM, SOCIALS } from '../data.js';
+
+// Compute current term week (build-time). Rebuilds on git push.
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+const [sy, sm, sd] = TERM.startSunday.split('-').map(Number);
+const termStart = new Date(sy, sm - 1, sd);
+const dayMs = 86_400_000;
+const weeksSinceStart = Math.floor((today.getTime() - termStart.getTime()) / (7 * dayMs));
+
+let termValue;
+if (today < termStart) {
+  termValue = 'Pre-term';
+} else if (weeksSinceStart >= TERM.weeks) {
+  termValue = 'Out of term';
+} else {
+  termValue = `Wk ${weeksSinceStart + 1} / ${TERM.weeks}`;
+}
+
+// Next upcoming social — only show if a real, non-closed entry exists.
+const nextSocial = (SOCIALS ?? []).find((s) => !s.closed) ?? null;
+---
+<section class="hero shell">
+  <div class="hero-grid-asymmetric">
+    <div>
+      <div class="eyebrow" style="margin-bottom: 28px;">— {TERM.name}</div>
+      <h1 class="display">Come dance!</h1>
+      <div class="hero-meta">
+        <div class="item">
+          <div class="label">{TERM.name}</div>
+          <div class="val" id="term-week-val">{termValue}</div>
+        </div>
+        <div class="item">
+          <div class="label">Next social</div>
+          <div class="val">{nextSocial ? nextSocial.when : 'TBA'}</div>
+        </div>
+      </div>
+      <div class="hero-cta-row">
+        <a href="#schedule" class="btn">See the week →</a>
+        <a href="#pricing" class="btn btn-ghost">Become a member</a>
+      </div>
+    </div>
+    <div class="hero-aside">
+      <figure class="hero-photo">
+        <img src="/assets/images/bg_class.jpg" alt="Oxford Salsa Society members on a class night" loading="eager" />
+      </figure>
+      <p>
+        Oxford's salsa &amp; bachata society. Salsa on Mondays, bachata on Thursdays —
+        beginners welcome, no partner required.
+      </p>
+      <div class="ticker">
+        <div class="row"><span>Mon · 18:50</span><span class="style">LA Salsa · Beginner</span><span>St Matthew's</span></div>
+        <div class="row"><span>Mon · 20:00</span><span class="style">LA Salsa · Improver</span><span>St Matthew's</span></div>
+        <div class="row"><span>Thu · 19:00</span><span class="style">Bachata · Beginner</span><span>St Columba's</span></div>
+        <div class="row"><span>Thu · 20:00</span><span class="style">Bachata · Improver</span><span>St Columba's</span></div>
+      </div>
+    </div>
+  </div>
+  <Marquee />
+</section>
+
+<script define:vars={{ startSunday: TERM.startSunday, weeks: TERM.weeks }}>
+  // Recompute term week on the client so the label stays accurate between deploys.
+  (function () {
+    const el = document.getElementById('term-week-val');
+    if (!el) return;
+    const [y, m, d] = startSunday.split('-').map(Number);
+    const start = new Date(y, m - 1, d);
+    start.setHours(0, 0, 0, 0);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const weeksSinceStart = Math.floor((today.getTime() - start.getTime()) / (7 * 86_400_000));
+    let value;
+    if (today < start) {
+      value = 'Pre-term';
+    } else if (weeksSinceStart >= weeks) {
+      value = 'Out of term';
+    } else {
+      value = 'Wk ' + (weeksSinceStart + 1) + ' / ' + weeks;
+    }
+    if (el.textContent !== value) el.textContent = value;
+  })();
+</script>

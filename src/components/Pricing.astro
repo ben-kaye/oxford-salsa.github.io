@@ -1,0 +1,27 @@
+---
+import { PRICING } from '../data.js';
+---
+<section id="pricing" class="section shell">
+  <div class="section-head">
+    <div><div class="num">03 — Membership</div></div>
+    <div>
+      <h2>One <em>card</em>, every class.</h2>
+      <p class="lede" style="margin-top: 24px;">
+        Students &amp; staff at the University of Oxford. Drop-in is welcome, but the termly card
+        is what most of the society picks up in week one.
+      </p>
+    </div>
+  </div>
+  <div class="pricing-grid">
+    {PRICING.map((p) => (
+      <div class={`price-card ${p.featured ? 'featured' : ''}`}>
+        {p.tag && <span class="tag">{p.tag}</span>}
+        <div class="name">{p.name}</div>
+        <div class="price"><sup>£</sup>{p.price}<small>{p.suffix}</small></div>
+        <ul>
+          {p.features.map((f) => <li>{f}</li>)}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>
