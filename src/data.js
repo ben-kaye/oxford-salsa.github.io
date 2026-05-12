@@ -116,17 +116,17 @@ export const TERM_CARD = [
       {
         level: "Beginners",
         time: "19:30–20:45",
-        description: "Beginners class with Brennan Delattre. Usually salsa, bachata once per month.",
+        description: "Beginners class. Usually salsa, with bachata once a month.",
       },
       {
         level: "Improvers",
         time: "19:30–20:45",
-        description: "Improvers class with guest teacher & DJ Sergio Fernandez. Usually salsa, bachata once per month.",
+        description: "Improvers class. Usually salsa, with bachata once a month (guest teacher Sergio Fernandez).",
       },
       {
         level: "Social dancing",
         time: "20:45–00:00",
-        description: "Open social dance floor with DJ Sergio Fernandez. All levels welcome.",
+        description: "Open social dance floor — bachata, salsa, kizomba. All levels welcome.",
       },
     ],
   },

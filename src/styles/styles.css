@@ -36,8 +36,72 @@ html, body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-/* Keep horizontal overflow contained on a non-sticky ancestor so the nav can still stick. */
+
+/* ============================================================
+   Layout safety net
+   Defenses against the bug classes that produced earlier overflow:
+     1. CSS Grid/flex children default to min-width: auto, so a wide
+        child can expand a 1fr track past the viewport.
+     2. A single long word with no whitespace can push a card past
+        its column.
+     3. An image larger than its container will widen the container.
+     4. An absolutely-positioned decorative element placed past the
+        right edge can extend the document scroll width.
+     5. The shorthand `padding: V H` form is dangerous on elements
+        that also wear `.shell`: a later rule wipes the shell gutter.
+   These rules are additive and produce no visual change on healthy
+   content — they only engage when something is about to overflow.
+   ============================================================ */
+
+/* Belt-and-braces document-level clip. `clip` (not `hidden`) preserves
+   `position: sticky` ancestors — losing that broke the nav previously. */
 body { overflow-x: clip; }
+
+/* Images can never push their parent wider than itself. */
+img, svg, video, picture { max-width: 100%; }
+
+/* Allow long words to break to a new line rather than overflow.
+   `anywhere` also lets grid/flex algorithms treat the word as breakable
+   when computing min-content, which is exactly what we want.
+   The marquee is the one place that depends on `nowrap`, so opt it out. */
+h1, h2, h3, h4, h5, h6, p, li, dd, dt, a, span, button, label, figcaption {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+.hero-marquee, .hero-marquee * { overflow-wrap: normal; word-break: keep-all; }
+
+/* Defeat `min-width: auto` on the grid and flex children we lay out.
+   Without this, a single wide child blows out a `1fr` track and the
+   whole section overflows horizontally. */
+.nav-inner > *,
+.hero-grid-asymmetric > *,
+.hero-meta > *,
+.section-head > *,
+.about-grid > *,
+.committee > *,
+.pricing-grid > *,
+.perform-grid > *,
+.socials-grid > *,
+.footer-grid > *,
+.cta-inner > *,
+.modal .modal-meta > *,
+.tm-grid > *,
+.term-mobile-head > *,
+.term-mobile-day > *,
+.day-modal-class > * {
+  min-width: 0;
+}
+
+/* Sections that host absolutely-positioned decorative `.big-num` need
+   to clip horizontally so a -40px offset doesn't widen the document.
+   `overflow-x: clip` preserves vertical flow and sticky descendants. */
+.section, .hero, .cta-band, .footer { overflow-x: clip; }
+
+/* Composability guard: keep `.shell`'s horizontal gutter intact when
+   another class on the same element (.section / .hero / .footer) also
+   sets padding. Those classes use longhand padding-top/padding-bottom
+   only — never the `padding: V H` shorthand. If you add a new wrapper
+   class, do the same. */
 
 ::selection { background: var(--oxblood); color: var(--paper); }
 
