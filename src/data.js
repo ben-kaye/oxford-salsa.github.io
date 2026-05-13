@@ -186,7 +186,7 @@ export const PRICING = [
   {
     name: "Single Term",
     price: "15",
-    suffix: "student · 8 weeks",
+    suffix: "Student & Staff · 8 weeks",
     tag: "Most picked",
     features: [
       "Associate rate £21",
@@ -200,7 +200,7 @@ export const PRICING = [
   {
     name: "Annual",
     price: "25",
-    suffix: "student · full year",
+    suffix: "Student & Staff · full year",
     tag: "Best value",
     features: [
       "Associate rate £40",
