@@ -237,7 +237,7 @@ export const PERFORM = {
     { id: "salsa-open",  name: "Open Salsa",          style: "salsa",   captains: "Carlota" },
     { id: "salsa-int",   name: "Intermediate Salsa",  style: "salsa",   captains: "Brianna & Duncan" },
     { id: "bachata",     name: "Bachata",             style: "bachata", captains: "Natasha" },
-    { id: "heels",       name: "Heels",               style: "heels",   captains: "TBA" },
+    { id: "heels",       name: "Heels",               style: "heels",   captains: "Em" },
   ],
 };
 
