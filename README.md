@@ -1,4 +1,4 @@
-# Calor — Oxford University Salsa & Bachata Society
+# Oxford University Salsa & Bachata Society
 
 The OUSS website, built with Astro + React islands and deployed to GitHub Pages at **[ouss.co.uk](https://ouss.co.uk)**.
 
