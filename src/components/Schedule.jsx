@@ -75,7 +75,7 @@ export default function Schedule() {
       ev.style === 'workshop'
         ? 'Workshop'
         : ev.style === 'partner'
-          ? 'Partner event'
+          ? 'Social dancing'
           : `${n} ${n === 1 ? 'level' : 'levels'}`;
     return (
       <button

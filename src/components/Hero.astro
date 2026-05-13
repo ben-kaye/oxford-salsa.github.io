@@ -20,8 +20,13 @@ if (today < termStart) {
   termValue = `Wk ${weeksSinceStart + 1} / ${TERM.weeks}`;
 }
 
-// Next upcoming social — only show if a real, non-closed entry exists.
-const nextSocial = (SOCIALS ?? []).find((s) => !s.closed) ?? null;
+// Next upcoming social — prefer a real one-off entry; fall back to a recurring
+// one (e.g. the weekly Muévete social) so the slot stays informative.
+const openSocials = (SOCIALS ?? []).filter((s) => !s.closed);
+const nextSocial =
+  openSocials.find((s) => !s.recurring) ??
+  openSocials.find((s) => s.recurring) ??
+  null;
 
 // Next 3 upcoming class events (build-time). Walks days forward until 3 events
 // are found or the term ends. Same-day events count as upcoming until midnight.

@@ -108,7 +108,7 @@ export const TERM_CARD = [
     venue: "The Oxford Retreat",
     address: "Hythe Bridge St, Oxford",
     booking: {
-      note: "Partner event with ¡Muévete! · every Wednesday, all year round (not just term-time) · pay at the door (£5 members / £7 standard) — card preferred, cash may be accepted",
+      note: "In partnership with ¡Muévete! · every Wednesday, all year round (not just term-time) · pay at the door (£5 members / £7 non-members) — card preferred, cash may be accepted",
       url: "https://muevete-oxford.co.uk",
       label: "Visit Muévete",
     },
@@ -142,7 +142,7 @@ export const TERM_CARD = [
     venue: "Old Fire Station",
     address: "40 George St, Oxford OX1 2AQ",
     booking: {
-      note: "Workshop with Juan · pay at the door — card only (£6 members / £9 standard)",
+      note: "Workshop with Juan · pay at the door — card only (£6 members / £9 non-members)",
       url: null,
       label: null,
     },
@@ -161,11 +161,21 @@ export const STYLES = [
   { id: "salsa", name: "LA Salsa" },
   { id: "bachata", name: "Bachata" },
   { id: "workshop", name: "Workshop" },
-  { id: "partner", name: "Partner event" },
+  { id: "partner", name: "Social dancing" },
 ];
 
 /* --------------------------------------------------------------------
- * PRICING — three cards. Standard / associate rates live in `features`.
+ * PRICING — three cards. Non-member / associate rates live in `features`.
+ *
+ * RATE TERMINOLOGY (for editors):
+ *   - "Member rate"      → discounted class price for cardholders.
+ *   - "Non-member rate"  → full price at the door, no card.
+ *   - "Associate rate"   → the membership-card price for members of the
+ *                          public. Equivalent to a member card (same perks
+ *                          / same discounted class rate), but the
+ *                          university only allows students & staff to hold
+ *                          a "member" card — everyone else joins as an
+ *                          associate at a slightly higher card price.
  * -------------------------------------------------------------------- */
 
 export const PRICING = [
@@ -175,9 +185,9 @@ export const PRICING = [
     suffix: "per class · member",
     tag: null,
     features: [
-      "Standard rate £7",
-      "Same-day extra class: £3 (£4 standard)",
-      "Bundle of 8 classes: £25 (£40 standard)",
+      "Non-member rate £7",
+      "Same-day extra class: £3 (£4 non-member)",
+      "Bundle of 8 classes: £25 (£40 non-member)",
       "Card only at the door · cash may be accepted at ¡Muévete!",
     ],
     cta: "Just turn up",
@@ -258,6 +268,20 @@ export const COMMITTEE = [
  * -------------------------------------------------------------------- */
 
 export const SOCIALS = [
+  {
+    // `recurring: true` keeps this out of the Hero's "Next social" slot —
+    // it's shown only as a card in the Socials section.
+    recurring: true,
+    when: "Muévete · Wednesday",
+    title: "¡Muévete! Social",
+    sub: "Our weekly social-dancing night in partnership with ¡Muévete! · The Oxford Retreat, Hythe Bridge St · class included 19:30 – 20:30 · social floor 20:45 – late · open to everyone (not club-only)",
+    price: "£5 members / £7 non-members · pay at the door",
+    pattern: "dots",
+    hue: 200,
+    dark: false,
+    url: "https://muevete-oxford.co.uk",
+    closed: false,
+  },
   {
     when: "Sat 9 May 2026",
     title: "Salsa & Bachata Ball 2026",
