@@ -131,6 +131,29 @@ export const TERM_CARD = [
     ],
   },
   {
+    // One-off workshop — runs only on Week 5 (Sun 24 May 2026).
+    id: "sun-la-tecnica",
+    dayOfWeek: 0,
+    weeks: [5],
+    day: "Sundays",
+    title: "La Técnica",
+    style: "workshop",
+    venue: "Location TBD",
+    address: "Details TBA",
+    booking: {
+      note: "Workshop with Sandy · pay at the door (£7 members / £10 non-members) · location TBD",
+      url: null,
+      label: null,
+    },
+    classes: [
+      {
+        level: "Workshop with Sandy",
+        time: "14:00–16:30",
+        description: "La Técnica workshop with Sandy. £7 members / £10 non-members · location TBD.",
+      },
+    ],
+  },
+  {
     // Fortnightly workshop — runs only on weeks listed in `weeks`.
     // Omit `weeks` for events that run every week.
     id: "sun-cali-salsa",
