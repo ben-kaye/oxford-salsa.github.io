@@ -26,7 +26,7 @@
 export const TERM = {
   name: "Trinity 2026",
   weeks: 8,
-  startSunday: "2026-05-03", // ISO date of Week 1's Sunday. Subsequent weeks +7 days.
+  startSunday: "2026-04-26", // ISO date of Week 1's Sunday. Subsequent weeks +7 days.
   blurb: "Same times every week of term. Drop in whenever — no partner or experience needed.",
 };
 
