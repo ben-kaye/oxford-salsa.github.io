@@ -131,25 +131,25 @@ export const TERM_CARD = [
     ],
   },
   {
-    // One-off workshop — runs only on Week 5 (Sun 24 May 2026).
-    id: "sun-la-tecnica",
-    dayOfWeek: 0,
-    weeks: [5],
-    day: "Sundays",
+    // One-off workshop — Friday of Week 6 (Fri 5 Jun 2026).
+    id: "fri-la-tecnica",
+    dayOfWeek: 5,
+    weeks: [6],
+    day: "Fridays",
     title: "La Técnica",
     style: "workshop",
-    venue: "Location TBD",
-    address: "Details TBA",
+    venue: "Old Fire Station",
+    address: "40 George St, Oxford OX1 2AQ",
     booking: {
-      note: "Workshop with Sandy · pay at the door (£7 members / £10 non-members) · location TBD",
+      note: "Footwork & styling with Jayne Turpin (open level) · pay at the door (£7 members / £10 non-members) · followed by a free SBK social at The Oxford Retreat, 20:30–midnight",
       url: null,
       label: null,
     },
     classes: [
       {
-        level: "Workshop with Sandy",
-        time: "14:00–16:30",
-        description: "La Técnica workshop with Sandy. £7 members / £10 non-members · location TBD.",
+        level: "Footwork & styling with Jayne Turpin — open level",
+        time: "19:00–20:30",
+        description: "Footwork and styling masterclass with Jayne Turpin. Open level. £7 members / £10 non-members at the door. Followed by a free SBK social at The Oxford Retreat, 20:30–midnight.",
       },
     ],
   },
@@ -174,6 +174,30 @@ export const TERM_CARD = [
         level: "Cali-style workshop",
         time: "15:30–17:00",
         description: "Cali-style salsa workshop with Juan. Doors 15:30, workshop runs to 17:00. Drop-in — all welcome, beginner-friendly.",
+      },
+    ],
+  },
+  {
+    // One-off society night — Saturday of Week 6 (Sat 6 Jun 2026).
+    // Also listed as a poster card in SOCIALS below.
+    id: "sat-latin-bop",
+    dayOfWeek: 6,
+    weeks: [6],
+    day: "Saturdays",
+    title: "Latin BOP",
+    style: "partner",
+    venue: "Kellogg College",
+    address: "60–62 Banbury Rd, Oxford OX2 6PN",
+    booking: {
+      note: "Kellogg College, in collaboration with Oxford Salsa Society · beginner salsa classes, performances, social dancing across two rooms · live DJ",
+      url: null,
+      label: null,
+    },
+    classes: [
+      {
+        level: "Society night",
+        time: "20:00–01:00",
+        description: "Kellogg College presents Latin BOP, in collaboration with Oxford Salsa Society — beginner salsa classes, performances, social dancing across two rooms, and a live DJ.",
       },
     ],
   },
@@ -291,6 +315,17 @@ export const COMMITTEE = [
  * -------------------------------------------------------------------- */
 
 export const SOCIALS = [
+  {
+    when: "Sat 6 Jun 2026",
+    title: "Latin BOP",
+    sub: "Kellogg College presents, in collaboration with Oxford Salsa Society · beginner salsa classes, performances, social dancing · two rooms · live DJ · Kellogg College · 20:00 – 01:00",
+    price: "Entry TBC",
+    pattern: "diagonal",
+    hue: 14,
+    dark: false,
+    url: null,
+    closed: false,
+  },
   {
     // `recurring: true` keeps this out of the Hero's "Next social" slot —
     // it's shown only as a card in the Socials section.
