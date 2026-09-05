@@ -1,0 +1,25 @@
+---
+import { FAQ } from '../data.js';
+---
+<section id="faq" class="section shell">
+  <div class="section-head">
+    <div><div class="num">07 — Beginner FAQ</div></div>
+    <div>
+      <h2>New to this? <em>Start here.</em></h2>
+      <p class="lede" style="margin-top: 24px;">
+        The questions we get asked most before someone's first class.
+      </p>
+    </div>
+  </div>
+  <div class="faq-list">
+    {FAQ.map((f, i) => (
+      <div class="faq-item">
+        <div class="faq-num">{String(i + 1).padStart(2, '0')}</div>
+        <div class="faq-body">
+          <h3 class="faq-q">{f.question}</h3>
+          <p class="faq-a">{f.answer}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

@@ -413,7 +413,7 @@ export const SOCIALS = [
     when: "Muévete · Wednesday",
     title: "¡Muévete! Social",
     sub: "Our weekly social-dancing night in partnership with ¡Muévete! · The Oxford Retreat, Hythe Bridge St · class included 19:30 – 20:30 · social floor 20:45 – late · open to everyone (not club-only)",
-    price: "£5 members / £7 non-members · pay at the door",
+    price: "£4 members / £6 non-members · pay at the door",
     pattern: "dots",
     hue: 200,
     dark: false,
@@ -434,3 +434,39 @@ export const SOCIALS = [
     closed: true,
   },
 ];
+
+/* --------------------------------------------------------------------
+ * FAQ — Beginner FAQ section. Each entry is one question + one answer,
+ * shown in order. Add, remove or reorder freely.
+ * -------------------------------------------------------------------- */
+
+export const FAQ = [
+  {
+    question: "Do I need a partner or any experience to come?",
+    answer: "No! We rotate partners throughout classes, so you're welcome to come on your own.",
+  },
+  {
+    question: "What should I wear?",
+    answer: "Just wear normal, comfortable clothes that you can move in - there's no need for any special dancewear.",
+  },
+  {
+    question: "What if I've never danced before?",
+    answer: `That's absolutely fine! Most of our members start as complete beginners. Just bring yourself, be ready to have fun, and we'll teach you everything you need to know.`,
+  },
+];
+
+/* --------------------------------------------------------------------
+ * PHOTO_GALLERY — filenames only. Every file must sit inside
+ * /public/assets/photogallery/. List only the ones you want shown on
+ * the site (in this order) — other photos can sit in that folder
+ * unused without breaking anything.
+ *
+ * Example once photos are added:
+ *   export const PHOTO_GALLERY = [
+ *     "ball-2026-01.jpg",
+ *     "showcase-2026-02.jpg",
+ *     "practica-03.jpg",
+ *   ];
+ * -------------------------------------------------------------------- */
+
+export const PHOTO_GALLERY = ["Salsa1.jpeg", "Salsa2.jpeg", "Salsa3.jpeg", "Salsa4.jpeg"];
