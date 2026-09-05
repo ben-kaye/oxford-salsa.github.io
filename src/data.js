@@ -24,9 +24,9 @@
  */
 
 export const TERM = {
-  name: "Trinity 2026",
+  name: "Michaelmas 2026",
   weeks: 8,
-  startSunday: "2026-04-26", // ISO date of Week 1's Sunday. Subsequent weeks +7 days.
+  startSunday: "2026-10-11", // ISO date of Week 1's Sunday. Subsequent weeks +7 days.
   blurb: "Same times every week of term. Drop in whenever — no partner or experience needed.",
 };
 
@@ -289,25 +289,105 @@ export const PERFORM = {
 };
 
 /* --------------------------------------------------------------------
- * COMMITTEE — add `photo: "/assets/headshots/file.jpg"` for a headshot,
- * otherwise initials are shown.
+ * COMMITTEE
+ *   - `photo`: "/assets/headshots/file.jpg" for a headshot, otherwise
+ *     initials are shown.
+ *   - `bio`: optional. A sentence or two shown in the pop-up card when
+ *     a visitor clicks a committee member's photo or name. Safe to
+ *     leave off — the pop-up will just skip that section.
  * -------------------------------------------------------------------- */
 
 export const COMMITTEE = [
   // Executive
-  { name: "Rosi Evans Pena", role: "President", since: "presidentouss1@gmail.com", hue: 18, photo: "/assets/headshots/president.jpg" },
-  { name: "Mishaela Andrews", role: "Treasurer", since: "treasurer.ouss@gmail.com", hue: 6, photo: "/assets/headshots/treasurer.jpg" },
-  { name: "Vittoria Baglieri", role: "Secretary", since: "secretaryouss1@gmail.com", hue: 24 },
+  {
+    name: "Arina",
+    role: "President",
+    contact: "presidentouss1@gmail.com",
+    hue: 18,
+    photo: "/assets/headshots/Arina.jpg",
+    bio: "Runs the society day-to-day and is usually the first friendly face you'll meet at a Monday beginners class.",
+  },
+  {
+    name: "Mishaela Andrews",
+    role: "Treasurer",
+    contact: "treasurer.ouss@gmail.com",
+    hue: 6,
+    bio: "Keeps the accounts balanced and membership cards sorted — get in touch for anything payment-related.",
+  },
+  {
+    name: "Vittoria Baglieri",
+    role: "Secretary",
+    contact: "secretaryouss1@gmail.com",
+    hue: 24,
+    bio: "Handles the society's admin and paperwork, and is a good first port of call for general queries.",
+  },
   // General committee
-  { name: "Lila", role: "Social Secretary", since: "Socials", hue: 32 },
-  { name: "Aaliyah", role: "Social Secretary", since: "Socials", hue: 12 },
-  { name: "Juan", role: "Social Secretary", since: "Socials", hue: 28 },
-  { name: "Gywneth", role: "Ball President", since: "Annual Ball", hue: 8 },
-  { name: "Ben Kaye", role: "Web Master", since: "webmaster@ouss.co.uk", hue: 20 },
-  { name: "Natasha", role: "Bachata Intermediate", since: "Team Captain", hue: 36 },
-  { name: "Carlota", role: "Salsa Improvers", since: "Team Captain", hue: 14 },
-  { name: "Brianna", role: "Salsa Intermediate", since: "Team Captain", hue: 22 },
-  { name: "Duncan", role: "Salsa Intermediate", since: "Team Captain", hue: 4 },
+  {
+    name: "Oscar",
+    role: "Social Secretary",
+    contact: "OUSS Socials",
+    hue: 32,
+    photo: "/assets/headshots/Oscar.jpg",
+    bio: "Plans the socials and club nights — say hi if you've got ideas for a future event.",
+  },
+  {
+    name: "Aaliyah",
+    role: "Social Secretary",
+    contact: "OUSS Socials",
+    hue: 12,
+    bio: "Co-runs the society's socials, from ¡Muévete! nights out to end-of-term celebrations.",
+  },
+  {
+    name: "Juan",
+    role: "Social Secretary",
+    contact: "OUSS Socials",
+    hue: 28,
+    bio: "Co-runs the society's socials and often teaches the Sunday Cali Salsa workshops.",
+  },
+  {
+    name: "Gywneth",
+    role: "Ball President",
+    contact: "",
+    hue: 8,
+    bio: "Organises the annual Salsa & Bachata Ball, from venue and tickets to the DJ line-up.",
+  },
+  {
+    name: "Graham",
+    role: "Web Master",
+    contact: "webmaster@ouss.co.uk",
+    hue: 20,
+    photo: "/assets/headshots/Nerd.jpg",
+    bio: "Builds and maintains this website — spot a typo or broken link? Send it his way.",
+  },
+  {
+    name: "Natasha",
+    role: "Bachata Intermediate Team Captain",
+    contact: "",
+    hue: 36,
+    photo: "/assets/headshots/Natasha.jpg",
+    bio: "Captains the Bachata performance team, rehearsing routines for the showcase and the annual ball.",
+  },
+  {
+    name: "Carlota",
+    role: "Salsa Improvers Team Captain",
+    contact: "",
+    hue: 14,
+    bio: "Captains the Open Salsa performance team and choreographs their routines each term.",
+  },
+  {
+    name: "Brianna",
+    role: "Salsa Intermediate Team Captain",
+    contact: "",
+    hue: 22,
+    bio: "Co-captains the Intermediate Salsa performance team alongside Duncan.",
+  },
+  {
+    name: "Duncan",
+    role: "Salsa Intermediate Team Captain",
+    contact: "",
+    hue: 4,
+    bio: "Co-captains the Intermediate Salsa performance team alongside Brianna.",
+  },
 ];
 
 /* --------------------------------------------------------------------

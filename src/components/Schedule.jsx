@@ -106,7 +106,7 @@ export default function Schedule() {
     <section id="schedule" className="section shell">
       <div className="section-head">
         <div>
-          <div className="num">02 — Term card</div>
+          <div className="num">02 —<br />Term card</div>
         </div>
         <div>
           <h2>The term at a glance.</h2>
