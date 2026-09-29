@@ -35,10 +35,10 @@ export const TERM_CARD = [
     id: "mon-salsa",
     dayOfWeek: 1, // 0=Sun, 1=Mon, ... 6=Sat
     day: "Mondays",
-    title: "LA Salsa",
+    title: "Salsa",
     style: "salsa",
     venue: "St Matthew's Church",
-    address: "Marlborough Rd, Oxford",
+    address: "Marlborough Rd, Oxford, OX1 4LW",
     booking: {
       note: "Booking required — book online via Ticketscandy (no pay-at-door)",
       url: "https://ticketscandy.com/e/monday-salsa-classes-13593",
@@ -46,24 +46,24 @@ export const TERM_CARD = [
     },
     classes: [
       {
-        level: "Beginners",
-        time: "18:50–19:50",
-        description: "Fundamentals — no partner or experience needed. Timing and basic partner work.",
+        level: "Beginners 1 & 2",
+        time: "19:00-20:00",
+        description: "With Connal and Ciara. Fundamentals — no partner or experience needed. Timing and basic partner work.",
       },
       {
         level: "Improvers",
         time: "20:00–21:00",
-        description: "Refine technique. Requires 6+ weeks of Beginners.",
+        description: "With Duncan and Brianna. Refine technique. Requires 6+ weeks of Beginners.",
       },
       {
-        level: "Intermediate",
+        level: "Intermediate 1",
         time: "20:00–21:00",
-        description: "Flow, styling and control. Runs in parallel with Improvers — teacher approval to move up.",
+        description: "With Duncan and Brianna. Flow, styling and control. Runs in parallel with Improvers — teacher approval to move up.",
       },
       {
-        level: "Advanced",
-        time: "21:10–22:10",
-        description: "Complex patterns and performance-quality work. Teacher approval to move up.",
+        level: "Intermediate 2",
+        time: "21:00–22:00",
+        description: "With Jennifer and Annan. Complex patterns and performance-quality work. Teacher approval to move up.",
       },
     ],
   },
@@ -73,10 +73,10 @@ export const TERM_CARD = [
     day: "Thursdays",
     title: "Bachata",
     style: "bachata",
-    venue: "St Columba's Church",
-    address: "Alfred St, Oxford OX1 4EH",
+    venue: "The Oxford Retreat",
+    address: "Hythe Bridge St, Oxford, OX1 2EW",
     booking: {
-      note: "Pay at the door — card only",
+      note: "Pay at the door — card only. With Sergio and Salomé.",
       url: null,
       label: null,
     },
@@ -106,21 +106,21 @@ export const TERM_CARD = [
     title: "¡Muévete!",
     style: "partner",
     venue: "The Oxford Retreat",
-    address: "Hythe Bridge St, Oxford",
+    address: "Hythe Bridge St, Oxford, OX1 2EW",
     booking: {
-      note: "In partnership with ¡Muévete! · every Wednesday, all year round (not just term-time) · pay at the door (£5 members / £7 non-members) — card preferred, cash may be accepted",
+      note: "In partnership with ¡Muévete! · every Wednesday, all year round (not just term-time) with Gwyneth, Julian, Jack, and Laura · pay at the door (£4 members / £6 non-members) — card preferred, cash may be accepted",
       url: "https://muevete-oxford.co.uk",
       label: "Visit Muévete",
     },
     classes: [
       {
         level: "Beginners",
-        time: "19:30–20:45",
+        time: "19:30–20:30",
         description: "Beginners class. Usually salsa, with bachata once a month.",
       },
       {
         level: "Improvers",
-        time: "19:30–20:45",
+        time: "19:30–20:30",
         description: "Improvers class. Usually salsa, with bachata once a month (guest teacher Sergio Fernandez).",
       },
       {
@@ -131,73 +131,70 @@ export const TERM_CARD = [
     ],
   },
   {
-    // One-off workshop — Friday of Week 6 (Fri 5 Jun 2026).
-    id: "fri-la-tecnica",
+    id: "fri-society-socials",
     dayOfWeek: 5,
-    weeks: [6],
+    weeks: [2],
     day: "Fridays",
-    title: "La Técnica",
-    style: "workshop",
-    venue: "Old Fire Station",
-    address: "40 George St, Oxford OX1 2AQ",
-    booking: {
-      note: "Footwork & styling with Jayne Turpin (open level) · pay at the door (£7 members / £10 non-members) · followed by a free SBK social at The Oxford Retreat, 20:30–midnight",
-      url: null,
-      label: null,
-    },
-    classes: [
-      {
-        level: "Footwork & styling with Jayne Turpin — open level",
-        time: "19:00–20:30",
-        description: "Footwork and styling masterclass with Jayne Turpin. Open level. £7 members / £10 non-members at the door. Followed by a free SBK social at The Oxford Retreat, 20:30–midnight.",
-      },
-    ],
-  },
-  {
-    // Fortnightly workshop — runs only on weeks listed in `weeks`.
-    // Omit `weeks` for events that run every week.
-    id: "sun-cali-salsa",
-    dayOfWeek: 0,
-    weeks: [1, 3, 5, 7],
-    day: "Sundays",
-    title: "Cali Salsa",
-    style: "workshop",
-    venue: "Old Fire Station",
-    address: "40 George St, Oxford OX1 2AQ",
-    booking: {
-      note: "Workshop with Juan · pay at the door — card only (£6 members / £9 non-members)",
-      url: null,
-      label: null,
-    },
-    classes: [
-      {
-        level: "Cali-style workshop",
-        time: "15:30–17:00",
-        description: "Cali-style salsa workshop with Juan. Doors 15:30, workshop runs to 17:00. Drop-in — all welcome, beginner-friendly.",
-      },
-    ],
-  },
-  {
-    // One-off society night — Saturday of Week 6 (Sat 6 Jun 2026).
-    // Also listed as a poster card in SOCIALS below.
-    id: "sat-latin-bop",
-    dayOfWeek: 6,
-    weeks: [6],
-    day: "Saturdays",
-    title: "Latin BOP",
+    title: "OUSS Socials",
     style: "partner",
-    venue: "Kellogg College",
-    address: "60–62 Banbury Rd, Oxford OX2 6PN",
+    venue: "St Catherine's College MCR",
+    // address: "40 George St, Oxford OX1 2AQ",
     booking: {
-      note: "Kellogg College, in collaboration with Oxford Salsa Society · beginner salsa classes, performances, social dancing across two rooms · live DJ",
+      note: "For full details, follow us on Instagram and sign up to the newsletter! Free event with pizza, an intro dance class, and games!",
       url: null,
       label: null,
     },
     classes: [
       {
-        level: "Society night",
-        time: "20:00–01:00",
-        description: "Kellogg College presents Latin BOP, in collaboration with Oxford Salsa Society — beginner salsa classes, performances, social dancing across two rooms, and a live DJ.",
+        level: null,
+        time: null,
+        description: null,
+      },
+    ],
+  },
+  // {
+  //   // Fortnightly workshop — runs only on weeks listed in `weeks`.
+  //   // Omit `weeks` for events that run every week.
+  //   id: "sun-cali-salsa",
+  //   dayOfWeek: 0,
+  //   weeks: [1, 3, 5, 7],
+  //   day: "Sundays",
+  //   title: "Cali Salsa",
+  //   style: "workshop",
+  //   venue: "Old Fire Station",
+  //   address: "40 George St, Oxford OX1 2AQ",
+  //   booking: {
+  //     note: "Workshop with Juan · pay at the door — card only (£6 members / £9 non-members)",
+  //     url: null,
+  //     label: null,
+  //   },
+  //   classes: [
+  //     {
+  //       level: "Cali-style workshop",
+  //       time: "15:30–17:00",
+  //       description: "Cali-style salsa workshop with Juan. Doors 15:30, workshop runs to 17:00. Drop-in — all welcome, beginner-friendly.",
+  //     },
+  //   ],
+  // },
+  {
+    id: "sun-bachata-solo-technique",
+    dayOfWeek: 0,
+    weeks: [2, 3, 4, 5],
+    day: "Sundays",
+    title: "Bachata Solo Technique",
+    style: "workshop",
+    venue: "Old Fire Station",
+    address: "40 George St, Oxford, OX1 2AQ",
+    booking: {
+      note: "Pay at the door (£7 members / £9f non-members)",
+      url: null,
+      label: null,
+    },
+    classes: [
+      {
+        level: "Open Level",
+        time: "15:00-16:00",
+        description: "Bachata styling and body movement w/ Natasha.",
       },
     ],
   },
@@ -232,7 +229,7 @@ export const PRICING = [
     suffix: "per class · member",
     tag: null,
     features: [
-      "Non-member rate £7",
+      "Non-member rate £6",
       "Same-day extra class: £3 (£4 non-member)",
       "Bundle of 8 classes: £25 (£40 non-member)",
       "Card only at the door · cash may be accepted at ¡Muévete!",
@@ -256,12 +253,12 @@ export const PRICING = [
   },
   {
     name: "Annual",
-    price: "25",
+    price: "20",
     suffix: "Student & Staff · full year",
     tag: "Best value",
     features: [
-      "Associate rate £40",
-      "Valid 5 Oct '25 – 4 Oct '26",
+      "Associate rate £45",
+      "Valid 5 Oct '26 – 4 Oct '27",
       "Member price on every class",
       "Discounts at all socials & the annual ball",
     ],
@@ -277,14 +274,13 @@ export const PRICING = [
  * -------------------------------------------------------------------- */
 
 export const PERFORM = {
-  year: "2025 / 26",
-  intro: "This year's line-up: Open Salsa, Intermediate Salsa, Bachata, and a brand-new Heels team. Teams rehearse a routine across the term and perform at the Dance Club Latino (DCL) university competition, the end-of-term showcase, and the annual Salsa Ball.",
+  year: "2026 / 27",
+  intro: "This year's line-up: Open Salsa, Intermediate Salsa, and Intermediate Bachata. Teams rehearse a routine across the term and perform at the Dance Club Latino (DCL) university competition, the end-of-term showcase, and the annual Salsa Ball.",
   audition: "Auditions run at the start of the academic year — next round TBA",
   teams: [
-    { id: "salsa-open",  name: "Open Salsa",          style: "salsa",   captains: "Carlota" },
-    { id: "salsa-int",   name: "Intermediate Salsa",  style: "salsa",   captains: "Brianna & Duncan" },
-    { id: "bachata",     name: "Bachata",             style: "bachata", captains: "Natasha" },
-    { id: "heels",       name: "Heels",               style: "heels",   captains: "Em" },
+    { id: "salsa-open",  name: "Open Salsa",          style: "salsa",   captains: "TBA" },
+    { id: "salsa-int",   name: "Intermediate Salsa",  style: "salsa",   captains: "Connall & Ciara" },
+    { id: "bachata",     name: "Intermediate Bachata",style: "bachata", captains: "Natasha & Ysaline" },
   ],
 };
 
@@ -305,22 +301,23 @@ export const COMMITTEE = [
     contact: "presidentouss1@gmail.com",
     hue: 18,
     photo: "/assets/headshots/Arina.jpg",
-    bio: "Runs the society day-to-day and is usually the first friendly face you'll meet at a Monday beginners class.",
+    bio: "I'm studying Spanish and Italian at Wadham College. I'm Russian by birth. I am looking forward to the crew dates and social dancing events.",
   },
   {
-    name: "Mishaela Andrews",
+    name: "Aarohi",
     role: "Treasurer",
     contact: "treasurer.ouss@gmail.com",
     hue: 6,
-    bio: "Keeps the accounts balanced and membership cards sorted — get in touch for anything payment-related.",
+    photo: "/assets/headshots/Aarohi.jpg",
+    bio: "I am studying Chemistry at Queen's College. Mangoes are my favorite fruit, and I'm most looking forward to the Salsa Ball!.",
   },
-  {
-    name: "Vittoria Baglieri",
-    role: "Secretary",
-    contact: "secretaryouss1@gmail.com",
-    hue: 24,
-    bio: "Handles the society's admin and paperwork, and is a good first port of call for general queries.",
-  },
+  // {
+  //   name: "",
+  //   role: "Secretary",
+  //   contact: "secretaryouss1@gmail.com",
+  //   hue: 24,
+  //   bio: "Handles the society's admin and paperwork, and is a good first port of call for general queries.",
+  // },
   // General committee
   {
     name: "Oscar",
@@ -328,36 +325,46 @@ export const COMMITTEE = [
     contact: "OUSS Socials",
     hue: 32,
     photo: "/assets/headshots/Oscar.jpg",
-    bio: "Plans the socials and club nights — say hi if you've got ideas for a future event.",
+    bio: "I am studying Immunology at St. Catz College. My initials are OMFG. I'm most looking forward to the DCL festival.",
   },
   {
-    name: "Aaliyah",
+    name: "Isabel",
     role: "Social Secretary",
     contact: "OUSS Socials",
+    photo: "/assets/headshots/Isabel.png",
     hue: 12,
-    bio: "Co-runs the society's socials, from ¡Muévete! nights out to end-of-term celebrations.",
-  },
-  {
-    name: "Juan",
-    role: "Social Secretary",
-    contact: "OUSS Socials",
-    hue: 28,
-    bio: "Co-runs the society's socials and often teaches the Sunday Cali Salsa workshops.",
+    bio: "I am doing my DPhil in Neuroscience at Trinity College. I can't pick my favorite dance style! And, I'm most looking forward to meeting new people and keeping on dancing.",
   },
   {
     name: "Gywneth",
-    role: "Ball President",
+    role: "Salsa Ball Manager",
     contact: "",
     hue: 8,
-    bio: "Organises the annual Salsa & Bachata Ball, from venue and tickets to the DJ line-up.",
+    photo: "/assets/headshots/Gwyneth.jpg",
+    bio: "Obviously looking most forward to the Oxford Salsa and Bachata Ball. It's the highlight of the year!",
+  },
+  {
+    name: "Bryce (he/him)",
+    role: "Welfare Member",
+    contact: "",
+    hue: 8,
+    bio: "I am doing my PhD in Maths at UCL. I love to lead and follow. I am most looking forward to all the socials and meeting everyone!",
+  },
+  {
+    name: "Lisa (she/her)",
+    role: "Welfare Member",
+    contact: "",
+    hue: 8,
+    photo: "/assets/headshots/Lisa.jpg",
+    bio: "I am doing my DPhil in Health Data Science at Reuben College. I've re-used my first salsa performance dress as a flamingo costume for halloween, and I'm looking forward to dancing with all the new society memebers!",
   },
   {
     name: "Graham",
     role: "Web Master",
     contact: "webmaster@ouss.co.uk",
     hue: 20,
-    photo: "/assets/headshots/Nerd.jpg",
-    bio: "Builds and maintains this website — spot a typo or broken link? Send it his way.",
+    photo: "/assets/headshots/Graham.jpg",
+    bio: "I am a professional working in motorsport. I've never lived more than 5 years in any one place continuously. I'm looking forward to weekly On-1 lessons to work on my salsa skill set!",
   },
   {
     name: "Natasha",
@@ -365,28 +372,31 @@ export const COMMITTEE = [
     contact: "",
     hue: 36,
     photo: "/assets/headshots/Natasha.jpg",
-    bio: "Captains the Bachata performance team, rehearsing routines for the showcase and the annual ball.",
+    bio: "I am doing my DPhil in Engineering Biology at Kellogg College. I lead and follow bachata. I'm most looking forward to kicking off training with the bachata team <3.",
   },
   {
-    name: "Carlota",
-    role: "Salsa Improvers Team Captain",
+    name: "Ysaline",
+    role: "Bachata Intermediate Team Captain",
     contact: "",
     hue: 14,
-    bio: "Captains the Open Salsa performance team and choreographs their routines each term.",
+    photo: "/assets/headshots/Ysaline.jpg",
+    bio: "I was forced to attend a salsa class 3 years ago and now here we are! I'm looking forward to training with the team and loads of social dancing!",
   },
   {
-    name: "Brianna",
+    name: "Connall",
     role: "Salsa Intermediate Team Captain",
     contact: "",
     hue: 22,
-    bio: "Co-captains the Intermediate Salsa performance team alongside Duncan.",
+    photo: "/assets/headshots/Connall_Ciara.jpg",
+    bio: "I am doing my PhD in Maths at New College. And I'm most looking forward to team training!",
   },
   {
-    name: "Duncan",
+    name: "Ciara",
     role: "Salsa Intermediate Team Captain",
     contact: "",
     hue: 4,
-    bio: "Co-captains the Intermediate Salsa performance team alongside Brianna.",
+    photo: "/assets/headshots/Connall_Ciara.jpg",
+    bio: "I am a teacher in the area, and I'm most looking forward to team training of course!.",
   },
 ];
 
@@ -404,7 +414,7 @@ export const SOCIALS = [
     hue: 14,
     dark: false,
     url: null,
-    closed: false,
+    closed: true,
   },
   {
     // `recurring: true` keeps this out of the Hero's "Next social" slot —
@@ -421,10 +431,10 @@ export const SOCIALS = [
     closed: false,
   },
   {
-    when: "Sat 9 May 2026",
-    title: "Salsa & Bachata Ball 2026",
+    when: "Sat 22nd May 2027",
+    title: "Salsa & Bachata Ball 2027",
     sub: "Oxford Town Hall, St Aldate's · 13:00 – 03:00 · workshops, classes, live acts, two-room DJ, afterparty · cocktail attire recommended",
-    price: "Door tickets only · £5 off with member code",
+    price: "",
     pattern: "stripes",
     hue: 18,
     dark: true,
@@ -469,4 +479,4 @@ export const FAQ = [
  *   ];
  * -------------------------------------------------------------------- */
 
-export const PHOTO_GALLERY = ["Salsa1.jpeg", "Salsa2.jpeg", "Salsa3.jpeg", "Salsa4.jpeg"];
+export const PHOTO_GALLERY = [];
