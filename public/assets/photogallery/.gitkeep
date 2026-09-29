@@ -1,0 +1,2 @@
+Drop photo gallery images in this folder, then list the filenames
+(in the order you want them shown) in PHOTO_GALLERY inside src/data.js.
