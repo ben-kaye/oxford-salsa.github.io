@@ -46,9 +46,14 @@ export const TERM_CARD = [
     },
     classes: [
       {
-        level: "Beginners 1 & 2",
+        level: "Beginners 1",
         time: "19:00-20:00",
-        description: "With Connal and Ciara. Fundamentals — no partner or experience needed. Timing and basic partner work.",
+        description: "With Jennifer and Annan. Fundamentals — no partner or experience needed. Timing and basic partner work.",
+      },
+      {
+        level: "Beginners 2",
+        time: "19:00-20:00",
+        description: "With Connall and Ciara. Fundamentals — no partner or experience needed. Timing and basic partner work.",
       },
       {
         level: "Improvers",
@@ -58,10 +63,10 @@ export const TERM_CARD = [
       {
         level: "Intermediate 1",
         time: "20:00–21:00",
-        description: "With Duncan and Brianna. Flow, styling and control. Runs in parallel with Improvers — teacher approval to move up.",
+        description: "With Jennifer and Annan. Flow, styling and control. Runs in parallel with Improvers — teacher approval to move up.",
       },
       {
-        level: "Intermediate 2",
+        level: "Intermediate 2/Advanced",
         time: "21:00–22:00",
         description: "With Jennifer and Annan. Complex patterns and performance-quality work. Teacher approval to move up.",
       },
@@ -71,30 +76,26 @@ export const TERM_CARD = [
     id: "thu-bachata",
     dayOfWeek: 4,
     day: "Thursdays",
+    weeks: [2,3,5,6,7,8],
     title: "Bachata",
     style: "bachata",
     venue: "The Oxford Retreat",
     address: "Hythe Bridge St, Oxford, OX1 2EW",
     booking: {
-      note: "Pay at the door — card only. With Sergio and Salomé.",
+      note: "Pay at the door — card only. With Sergio and Salomé. Doesn't run the whole term for Michaelmas 2026.",
       url: null,
       label: null,
     },
     classes: [
       {
         level: "Beginners",
-        time: "19:00–20:00",
+        time: "20:00-21:00",
         description: "Discover the rhythm of bachata. Essential steps and partner connection.",
       },
       {
         level: "Improver / Intermediate",
-        time: "20:00–21:00",
-        description: "Take it to the next level with fluid moves and more intricate partner work.",
-      },
-      {
-        level: "Advanced",
         time: "21:00–22:00",
-        description: "Complex musicality, advanced body movement and dynamic partner combinations.",
+        description: "Take it to the next level with fluid moves and more intricate partner work.",
       },
     ],
   },
@@ -125,7 +126,7 @@ export const TERM_CARD = [
       },
       {
         level: "Social dancing",
-        time: "20:45–00:00",
+        time: "20:30–00:00",
         description: "Open social dance floor — bachata, salsa, kizomba. All levels welcome.",
       },
     ],
@@ -186,7 +187,7 @@ export const TERM_CARD = [
     venue: "Old Fire Station",
     address: "40 George St, Oxford, OX1 2AQ",
     booking: {
-      note: "Pay at the door (£7 members / £9f non-members)",
+      note: "Pay at the door (£7 members / £9 non-members)",
       url: null,
       label: null,
     },
@@ -235,20 +236,6 @@ export const PRICING = [
       "Card only at the door · cash may be accepted at ¡Muévete!",
     ],
     cta: "Just turn up",
-    featured: false,
-  },
-  {
-    name: "Single Term",
-    price: "15",
-    suffix: "Student & Staff · 8 weeks",
-    tag: "Most picked",
-    features: [
-      "Associate rate £21",
-      "Member price on every class",
-      "Discounts on socials & workshops",
-      "Expires end of university term",
-    ],
-    cta: "Become a member",
     featured: false,
   },
   {
@@ -311,13 +298,14 @@ export const COMMITTEE = [
     photo: "/assets/headshots/Aarohi.jpg",
     bio: "I am studying Chemistry at Queen's College. Mangoes are my favorite fruit, and I'm most looking forward to the Salsa Ball!.",
   },
-  // {
-  //   name: "",
-  //   role: "Secretary",
-  //   contact: "secretaryouss1@gmail.com",
-  //   hue: 24,
-  //   bio: "Handles the society's admin and paperwork, and is a good first port of call for general queries.",
-  // },
+  {
+    name: "Lily",
+    role: "Secretary",
+    contact: "secretaryouss1@gmail.com",
+    hue: 24,
+    photo: "/assets/headshots/Lily.jpg",
+    bio: "I am studying French and Spanish at St. Hilda's College. I can do the splits. I'm looking forward to meeting new people and learning some salsa moves for my year abroad.",
+  },
   // General committee
   {
     name: "Oscar",
@@ -347,24 +335,24 @@ export const COMMITTEE = [
     name: "Bryce (he/him)",
     role: "Welfare Member",
     contact: "",
-    hue: 8,
+    hue: 12,
     bio: "I am doing my PhD in Maths at UCL. I love to lead and follow. I am most looking forward to all the socials and meeting everyone!",
   },
   {
     name: "Lisa (she/her)",
     role: "Welfare Member",
     contact: "",
-    hue: 8,
+    hue: 15,
     photo: "/assets/headshots/Lisa.jpg",
     bio: "I am doing my DPhil in Health Data Science at Reuben College. I've re-used my first salsa performance dress as a flamingo costume for halloween, and I'm looking forward to dancing with all the new society memebers!",
   },
   {
-    name: "Graham",
-    role: "Web Master",
-    contact: "webmaster@ouss.co.uk",
-    hue: 20,
-    photo: "/assets/headshots/Graham.jpg",
-    bio: "I am a professional working in motorsport. I've never lived more than 5 years in any one place continuously. I'm looking forward to weekly On-1 lessons to work on my salsa skill set!",
+    name: "Maya",
+    role: "Social Media Manager",
+    contact: "",
+    hue: 8,
+    photo: "/assets/headshots/Maya.jpg",
+    bio: "I am working as a Primary Teaching Assistant at the Cambridge School of Bucharest in Romania. Even if I am not in Oxford for classes or dancing, I look forward to support OUSS in my new role after being a Welfare Member. Fun Fact! I found my love for dancing with Bachata before Salsa!",
   },
   {
     name: "Natasha",
@@ -397,6 +385,14 @@ export const COMMITTEE = [
     hue: 4,
     photo: "/assets/headshots/Connall_Ciara.jpg",
     bio: "I am a teacher in the area, and I'm most looking forward to team training of course!.",
+  },
+  {
+    name: "Graham",
+    role: "Web Master",
+    contact: "webmaster@ouss.co.uk",
+    hue: 20,
+    photo: "/assets/headshots/Graham.jpg",
+    bio: "I am a professional working in motorsport. I've never lived more than 5 years in any one place continuously. I'm looking forward to weekly On-1 lessons to work on my salsa skill set!",
   },
 ];
 
