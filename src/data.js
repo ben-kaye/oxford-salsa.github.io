@@ -30,6 +30,10 @@ export const TERM = {
   blurb: "Same times every week of term. Drop in whenever — no partner or experience needed.",
 };
 
+export const SITE_LINKS = {
+  url_memberships: "https://ticketscandy.com/e/oxford-university-salsa-society-26-27-21351"
+}
+
 export const TERM_CARD = [
   {
     id: "mon-salsa",
@@ -41,7 +45,7 @@ export const TERM_CARD = [
     address: "Marlborough Rd, Oxford, OX1 4LW",
     booking: {
       note: "Booking required — book online via Ticketscandy (no pay-at-door)",
-      url: "https://ticketscandy.com/e/monday-salsa-classes-13593",
+      url: "https://ticketscandy.com/e/oxford-university-salsa-society-26-27-21351",
       label: "Book Monday Salsa",
     },
     classes: [
@@ -79,12 +83,12 @@ export const TERM_CARD = [
     weeks: [2,3,5,6,7,8],
     title: "Bachata",
     style: "bachata",
-    venue: "The Oxford Retreat",
-    address: "Hythe Bridge St, Oxford, OX1 2EW",
+    venue: "Wadham College, Moser Theatre",
+    address: "Parks Rd, Oxford OX1 3PN",
     booking: {
       note: "Pay at the door — card only. With Sergio and Salomé. Doesn't run the whole term for Michaelmas 2026.",
-      url: null,
-      label: null,
+      url: "https://ticketscandy.com/e/oxford-university-salsa-society-26-27-21351",
+      label: "Book Thursday Bachata",
     },
     classes: [
       {
@@ -188,8 +192,8 @@ export const TERM_CARD = [
     address: "40 George St, Oxford, OX1 2AQ",
     booking: {
       note: "Pay at the door (£7 members / £9 non-members)",
-      url: null,
-      label: null,
+      url: "https://ticketscandy.com/e/oxford-university-salsa-society-26-27-21351",
+      label: "Book Sunday Bachata",
     },
     classes: [
       {

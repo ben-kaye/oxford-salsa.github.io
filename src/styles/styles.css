@@ -468,6 +468,11 @@ body::before {
 .btn-oxblood:hover {
   background: #e63e7a;
 }
+.btn-membership {
+  background: var(--terracotta);
+  color: #fff;
+  font-size: 24px;
+}
 
 /* ============================================================
    HERO
