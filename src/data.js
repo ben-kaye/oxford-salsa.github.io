@@ -83,8 +83,8 @@ export const TERM_CARD = [
     weeks: [2,3,5,6,7,8],
     title: "Bachata",
     style: "bachata",
-    venue: "Wadham College, Moser Theatre",
-    address: "Parks Rd, Oxford OX1 3PN",
+    venue: "St. Barnabas, C of E Primary School",
+    address: "40 Jericho St, Oxford OX2 6BU",
     booking: {
       note: "Pay at the door — card only. With Sergio and Salomé. Doesn't run the whole term for Michaelmas 2026.",
       url: "https://ticketscandy.com/e/oxford-university-salsa-society-26-27-21351",
